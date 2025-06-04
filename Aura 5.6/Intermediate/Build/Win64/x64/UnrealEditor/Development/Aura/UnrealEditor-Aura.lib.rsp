@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-Aura.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura 5.6/Intermediate/Build/Win64/x64/AuraEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_3.h.obj"
+"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura 5.6/Intermediate/Build/Win64/x64/UnrealEditor/Development/Aura/Module.Aura.gen.cpp.obj"
+"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura 5.6/Intermediate/Build/Win64/x64/UnrealEditor/Development/Aura/Aura.cpp.obj"
+"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura 5.6/Intermediate/Build/Win64/x64/UnrealEditor/Development/Aura/AuraCharacterBase.cpp.obj"
+"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura 5.6/Intermediate/Build/Win64/x64/UnrealEditor/Development/Aura/PerModuleInline.gen.cpp.obj"
+"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura 5.6/Intermediate/Build/Win64/x64/UnrealEditor/Development/Aura/Default.rc2.res"
+/OUT:"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura 5.6/Intermediate/Build/Win64/x64/UnrealEditor/Development/Aura/UnrealEditor-Aura.lib"
