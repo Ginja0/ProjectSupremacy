@@ -1,6 +1,9 @@
 C:\Users\USER\Documents\GitHub\ProjectSupremacy\Aura\Source\Aura\Public\Character\AuraCharacter.h
 C:\Users\USER\Documents\GitHub\ProjectSupremacy\Aura\Source\Aura\Public\Character\AuraCharacterBase.h
-C:\Users\USER\Documents\GitHub\ProjectSupremacy\Aura\Source\Aura\Public\PlayerController\AuraPlayerController.h
-C:\Users\USER\Documents\GitHub\ProjectSupremacy\Aura\Source\Aura\Public\Game\AuraGameModeBase.h
 C:\Users\USER\Documents\GitHub\ProjectSupremacy\Aura\Source\Aura\Public\Character\AuraEnemy.h
+C:\Users\USER\Documents\GitHub\ProjectSupremacy\Aura\Source\Aura\Public\AbilitySystem\AuraAbilitySystemComponent.h
+C:\Users\USER\Documents\GitHub\ProjectSupremacy\Aura\Source\Aura\Public\Game\AuraGameModeBase.h
+C:\Users\USER\Documents\GitHub\ProjectSupremacy\Aura\Source\Aura\Public\PlayerController\AuraPlayerController.h
+C:\Users\USER\Documents\GitHub\ProjectSupremacy\Aura\Source\Aura\Public\AbilitySystem\AuraAttributeSet.h
 C:\Users\USER\Documents\GitHub\ProjectSupremacy\Aura\Source\Aura\Public\Interact\EnemyInterface.h
+C:\Users\USER\Documents\GitHub\ProjectSupremacy\Aura\Source\Aura\Public\PlayerController\AuraPlayerState.h
