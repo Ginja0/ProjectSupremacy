@@ -2,6 +2,8 @@
 
 
 #include "Character/AuraCharacterBase.h"
+#include "AbilitySystem/AuraAbilitySystemComponent.h"
+#include "AbilitySystem/AuraAttributeSet.h"
 
 // Sets default values
 AAuraCharacterBase::AAuraCharacterBase()
@@ -19,6 +21,8 @@ UAbilitySystemComponent* AAuraCharacterBase::GetAbilitySystemComponent() const
 {
 	return AbilitySystemComponent;
 }
+
+
 
 // Called when the game starts or when spawned
 void AAuraCharacterBase::BeginPlay()
