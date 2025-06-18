@@ -15,6 +15,12 @@
 				"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Content/Blueprints/Character/Goblin_Slingshot/BP_Goblin_Slingshot_Enemy.uasset",
 				"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Content/Blueprints/Character/BP_EnemyBase.uasset",
 				"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Content/Blueprints/Character/Aura/BP_AuraPlayerState.uasset",
+				"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Content/Blueprints/Effects/BP_HealthPotion.uasset",
+				"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Content/Blueprints/UI/ProgressBar/WBP_GlobeProgressBar.uasset",
+				"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Content/Blueprints/UI/ProgressBar/WBP_HealthGlobe.uasset",
+				"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Content/Blueprints/UI/Overlay/WBP_Overalay.uasset",
+				"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Content/Blueprints/UI/ProgressBar/WBP_ManaGlobe.uasset",
+				"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Content/Blueprints/UI/ProgressBar/BP_GlobeProgressBar.uasset",
 				"C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Content/Blueprints/Input/PC_AuraPlayerController.uasset"
 			]
 		}
