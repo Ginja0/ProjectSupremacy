@@ -15,6 +15,14 @@ void EmptyLinkFunctionForGeneratedCodeAuraUserWidget() {}
 	UMG_API UClass* Z_Construct_UClass_UUserWidget();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
+	DEFINE_FUNCTION(UAuraUserWidget::execSetWidgetController)
+	{
+		P_GET_OBJECT(UObject,Z_Param_InWidgetController);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetWidgetController(Z_Param_InWidgetController);
+		P_NATIVE_END;
+	}
 	static FName NAME_UAuraUserWidget_WidgetControllerSet = FName(TEXT("WidgetControllerSet"));
 	void UAuraUserWidget::WidgetControllerSet()
 	{
@@ -22,6 +30,45 @@ void EmptyLinkFunctionForGeneratedCodeAuraUserWidget() {}
 	}
 	void UAuraUserWidget::StaticRegisterNativesUAuraUserWidget()
 	{
+		UClass* Class = UAuraUserWidget::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "SetWidgetController", &UAuraUserWidget::execSetWidgetController },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics
+	{
+		struct AuraUserWidget_eventSetWidgetController_Parms
+		{
+			UObject* InWidgetController;
+		};
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_InWidgetController;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics::NewProp_InWidgetController = { "InWidgetController", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraUserWidget_eventSetWidgetController_Parms, InWidgetController), Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics::NewProp_InWidgetController,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/UI/Widget/AuraUserWidget.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UAuraUserWidget, nullptr, "SetWidgetController", nullptr, nullptr, Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics::PropPointers), sizeof(Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics::AuraUserWidget_eventSetWidgetController_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics::Function_MetaDataParams), Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics::AuraUserWidget_eventSetWidgetController_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UAuraUserWidget_SetWidgetController()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UAuraUserWidget_SetWidgetController_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_UAuraUserWidget_WidgetControllerSet_Statics
 	{
@@ -71,6 +118,7 @@ void EmptyLinkFunctionForGeneratedCodeAuraUserWidget() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraUserWidget_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UAuraUserWidget_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UAuraUserWidget_SetWidgetController, "SetWidgetController" }, // 3349071584
 		{ &Z_Construct_UFunction_UAuraUserWidget_WidgetControllerSet, "WidgetControllerSet" }, // 2147179199
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraUserWidget_Statics::FuncInfo) < 2048);
@@ -132,9 +180,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraUserWidget() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_UI_Widget_AuraUserWidget_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UAuraUserWidget, UAuraUserWidget::StaticClass, TEXT("UAuraUserWidget"), &Z_Registration_Info_UClass_UAuraUserWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraUserWidget), 21255260U) },
+		{ Z_Construct_UClass_UAuraUserWidget, UAuraUserWidget::StaticClass, TEXT("UAuraUserWidget"), &Z_Registration_Info_UClass_UAuraUserWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraUserWidget), 4105285597U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_UI_Widget_AuraUserWidget_h_4231580122(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_UI_Widget_AuraUserWidget_h_1523548446(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_UI_Widget_AuraUserWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_UI_Widget_AuraUserWidget_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
