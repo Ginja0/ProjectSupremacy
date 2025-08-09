@@ -28,6 +28,18 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FEffectProperties>();
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_AuraAttributeSet_h_59_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_AuraAttributeSet_h_59_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnRep_ManaRegeneration); \
+	DECLARE_FUNCTION(execOnRep_HealthRegeneration); \
+	DECLARE_FUNCTION(execOnRep_CriticalHitResistance); \
+	DECLARE_FUNCTION(execOnRep_CriticalHitDamage); \
+	DECLARE_FUNCTION(execOnRep_CriticalHitChance); \
+	DECLARE_FUNCTION(execOnRep_BlockChance); \
+	DECLARE_FUNCTION(execOnRep_ArmorPenetration); \
+	DECLARE_FUNCTION(execOnRep_Armor); \
+	DECLARE_FUNCTION(execOnRep_Vigor); \
+	DECLARE_FUNCTION(execOnRep_Resilence); \
+	DECLARE_FUNCTION(execOnRep_Intelligence); \
+	DECLARE_FUNCTION(execOnRep_Strength); \
 	DECLARE_FUNCTION(execOnRep_MaxMana); \
 	DECLARE_FUNCTION(execOnRep_Mana); \
 	DECLARE_FUNCTION(execOnRep_MaxHealth); \
@@ -45,11 +57,23 @@ public: \
 	enum class ENetFields_Private : uint16 \
 	{ \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
-		Health=NETFIELD_REP_START, \
+		Strength=NETFIELD_REP_START, \
+		Intelligence, \
+		Resilence, \
+		Vigor, \
+		Armor, \
+		ArmorPenetration, \
+		BlockChance, \
+		CriticalHitChance, \
+		CriticalHitDamage, \
+		CriticalHitResistance, \
+		HealthRegeneration, \
+		ManaRegeneration, \
 		MaxHealth, \
-		Mana, \
 		MaxMana, \
-		NETFIELD_REP_END=MaxMana	}; \
+		Health, \
+		Mana, \
+		NETFIELD_REP_END=Mana	}; \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override; \
 private: \
 	REPLICATED_BASE_CLASS(UAuraAttributeSet) \
