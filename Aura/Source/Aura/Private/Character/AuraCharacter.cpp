@@ -28,6 +28,7 @@ void AAuraCharacter::PossessedBy(AController* NewController)
 
 	//Init for server
 	InitAbilityActorInfo();
+	AddCharacterAbilities();
 
 }
 

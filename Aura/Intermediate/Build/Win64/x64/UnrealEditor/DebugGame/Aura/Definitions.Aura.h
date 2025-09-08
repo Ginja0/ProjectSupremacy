@@ -1,4 +1,4 @@
-#include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/x64/AuraEditor/DebugGame/Engine/SharedDefinitions.Engine.NonOptimized.Cpp20.InclOrderUnreal5_0.h"
+#include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/x64/AuraEditor/DebugGame/UnrealEd/SharedDefinitions.UnrealEd.NonOptimized.Cpp20.InclOrderUnreal5_0.h"
 #undef UE_IS_ENGINE_MODULE
 #undef DEPRECATED_FORGAME
 #define DEPRECATED_FORGAME DEPRECATED
@@ -26,5 +26,5 @@
 #define WITH_GAMEPLAY_DEBUGGER_MENU 1
 #define GAMEPLAYABILITIES_API DLLIMPORT
 #define DATAREGISTRY_API DLLIMPORT
-#define AURA_API DLLEXPORT
 #define ENHANCEDINPUT_API DLLIMPORT
+#define AURA_API DLLEXPORT

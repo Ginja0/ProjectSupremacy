@@ -7,6 +7,7 @@
 #include "UObject/NoExportTypes.h"
 #include "AuraWidgetController.generated.h"
 
+
 /**
  * 
  */
@@ -40,7 +41,9 @@ class AURA_API UAuraWidgetController : public UObject
 public:
 	UFUNCTION(BlueprintCallable)
 	void SetWidgetControllerParams(const FWidgetControllerParams& WidgetControllerParams);
+	UFUNCTION(BlueprintCallable)
 	virtual void BroadcastInitialValues();
+	UFUNCTION(BlueprintCallable)
 	virtual void BindCallbacksToDependencies();
 
 protected:

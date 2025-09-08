@@ -53,5 +53,15 @@ void AAuraCharacterBase::IntializeDefaultAttributes() const
 	ApplyEffectToSelf(DefaualtVitalAttribute, 1.f);
 }
 
+void AAuraCharacterBase::AddCharacterAbilities()
+{
+	UAuraAbilitySystemComponent* AuraASC = CastChecked<UAuraAbilitySystemComponent>(AbilitySystemComponent);
+	if (!HasAuthority()) return;
+
+	AuraASC->AddCharacterAbilities(StartupAbilities);
+
+	
+}
+
 
 

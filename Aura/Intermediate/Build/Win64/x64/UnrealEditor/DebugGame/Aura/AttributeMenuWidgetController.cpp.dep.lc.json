@@ -69,7 +69,12 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\assetregistry\\arfilter.h",
             "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\aurawidgetcontroller.generated.h",
-            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\attributemenuwidgetcontroller.generated.h"
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\attributemenuwidgetcontroller.generated.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\auragameplaytags.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\abilitysystem\\auraattributeset.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auraattributeset.generated.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\abilitysystem\\data\\attributeinfo.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\attributeinfo.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

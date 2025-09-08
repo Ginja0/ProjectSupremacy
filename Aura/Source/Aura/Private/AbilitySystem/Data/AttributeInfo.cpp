@@ -1,4 +1,4 @@
-// Copyright Mythos Architects
+	// Copyright Mythos Architects
 
 
 #include "AbilitySystem/Data/AttributeInfo.h"
