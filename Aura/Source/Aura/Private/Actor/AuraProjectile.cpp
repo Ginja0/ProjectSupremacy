@@ -3,25 +3,39 @@
 
 #include "Actor/AuraProjectile.h"
 
-// Sets default values
+#include "Components/SphereComponent.h"
+#include "GameFramework/ProjectileMovementComponent.h"
+
 AAuraProjectile::AAuraProjectile()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
-}
+	SphereComp = CreateDefaultSubobject<USphereComponent>("Sphere");
+	SetRootComponent(SphereComp);
+	SphereComp->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+	SphereComp->SetCollisionResponseToAllChannels(ECR_Ignore);
+	SphereComp->SetCollisionResponseToChannel(ECC_WorldDynamic, ECR_Overlap);
+	SphereComp->SetCollisionResponseToChannel(ECC_WorldStatic, ECR_Overlap);
+	SphereComp->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
 
-// Called when the game starts or when spawned
-void AAuraProjectile::BeginPlay()
-{
-	Super::BeginPlay();
+	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>("ProjectileMovement");
+	ProjectileMovement->InitialSpeed = 550.f;
+	ProjectileMovement->MaxSpeed = 550.f;
+	ProjectileMovement->ProjectileGravityScale = 0.f;
+	
 	
 }
 
-// Called every frame
-void AAuraProjectile::Tick(float DeltaTime)
+void AAuraProjectile::BeginPlay()
 {
-	Super::Tick(DeltaTime);
-
+	Super::BeginPlay();
+	SphereComp->OnComponentBeginOverlap.AddDynamic(this, &AAuraProjectile::OnSphereOverlap);
 }
+
+void AAuraProjectile::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	
+}
+
 
