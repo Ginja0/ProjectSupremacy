@@ -70,7 +70,20 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\public\\net\\unrealnetwork.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\net\\core\\public\\net\\core\\propertyconditions\\propertyconditions.h",
-            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\auragameplaytags.h"
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\auragameplaytags.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\interact\\combatinterface.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\combatinterface.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystatics.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetsystemlibrary.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\kismetsystemlibrary.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\sound\\dialoguetypes.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\dialoguetypes.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystaticstypes.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystaticstypes.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\playercontroller\\auraplayercontroller.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auraplayercontroller.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

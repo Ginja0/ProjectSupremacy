@@ -7,12 +7,14 @@
 #include "UObject/GeneratedCppIncludes.h"
 #include "Aura/Public/AbilitySystem/Abilities/AuraGameplayAbility.h"
 #include "GameplayTagContainer.h"
+#include "ScalableFloat.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeAuraGameplayAbility() {}
 // Cross Module References
 	AURA_API UClass* Z_Construct_UClass_UAuraGameplayAbility();
 	AURA_API UClass* Z_Construct_UClass_UAuraGameplayAbility_NoRegister();
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UGameplayAbility();
+	GAMEPLAYABILITIES_API UScriptStruct* Z_Construct_UScriptStruct_FScalableFloat();
 	GAMEPLAYTAGS_API UScriptStruct* Z_Construct_UScriptStruct_FGameplayTag();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
@@ -34,6 +36,10 @@ void EmptyLinkFunctionForGeneratedCodeAuraGameplayAbility() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_StartupInputTag_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_StartupInputTag;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Damage_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Damage;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -59,8 +65,16 @@ void EmptyLinkFunctionForGeneratedCodeAuraGameplayAbility() {}
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UAuraGameplayAbility_Statics::NewProp_StartupInputTag = { "StartupInputTag", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UAuraGameplayAbility, StartupInputTag), Z_Construct_UScriptStruct_FGameplayTag, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraGameplayAbility_Statics::NewProp_StartupInputTag_MetaData), Z_Construct_UClass_UAuraGameplayAbility_Statics::NewProp_StartupInputTag_MetaData) }; // 2083603574
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAuraGameplayAbility_Statics::NewProp_Damage_MetaData[] = {
+		{ "Category", "Damage" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/Abilities/AuraGameplayAbility.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UAuraGameplayAbility_Statics::NewProp_Damage = { "Damage", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UAuraGameplayAbility, Damage), Z_Construct_UScriptStruct_FScalableFloat, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraGameplayAbility_Statics::NewProp_Damage_MetaData), Z_Construct_UClass_UAuraGameplayAbility_Statics::NewProp_Damage_MetaData) }; // 4070660376
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UAuraGameplayAbility_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAuraGameplayAbility_Statics::NewProp_StartupInputTag,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAuraGameplayAbility_Statics::NewProp_Damage,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UAuraGameplayAbility_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UAuraGameplayAbility>::IsAbstract,
@@ -101,9 +115,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraGameplayAbility() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraGameplayAbility_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UAuraGameplayAbility, UAuraGameplayAbility::StaticClass, TEXT("UAuraGameplayAbility"), &Z_Registration_Info_UClass_UAuraGameplayAbility, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraGameplayAbility), 1496823537U) },
+		{ Z_Construct_UClass_UAuraGameplayAbility, UAuraGameplayAbility::StaticClass, TEXT("UAuraGameplayAbility"), &Z_Registration_Info_UClass_UAuraGameplayAbility, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraGameplayAbility), 2515735252U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraGameplayAbility_h_2350948862(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraGameplayAbility_h_897390004(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraGameplayAbility_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraGameplayAbility_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

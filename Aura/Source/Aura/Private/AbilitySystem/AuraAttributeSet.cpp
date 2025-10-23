@@ -8,6 +8,9 @@
 #include "GameFramework/Character.h"
 #include "Net/UnrealNetwork.h"
 #include "AuraGameplayTags.h"
+#include "Interact/CombatInterface.h"
+#include "Kismet/GameplayStatics.h"
+#include "PlayerController/AuraPlayerController.h"
 
 UAuraAttributeSet::UAuraAttributeSet()
 {
@@ -75,11 +78,9 @@ void UAuraAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, 
 	}
 }
 
-void UAuraAttributeSet::SetEffectProperties(const FGameplayEffectModCallbackData& Data,
-	FEffectProperties& Props)
+void UAuraAttributeSet::SetEffectProperties(const FGameplayEffectModCallbackData& Data, FEffectProperties& Props) const
 {
-	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
-	{
+
 		Props.EffectContextHandle = Data.EffectSpec.GetContext();
 		Props.SourceASC = Props.EffectContextHandle.GetOriginalInstigatorAbilitySystemComponent();
 
@@ -96,12 +97,11 @@ void UAuraAttributeSet::SetEffectProperties(const FGameplayEffectModCallbackData
 				}
 			}
 			
-			if (Props.SourceController )
+			if (Props.SourceController)
 			{
-				Props.SourceCharacter = Cast<ACharacter>(Props.SourceController ->GetCharacter());
+				Props.SourceCharacter = Cast<ACharacter>(Props.SourceController->GetPawn());
 			}
 		}
-	}
 
 	if (Data.Target.AbilityActorInfo.IsValid() && Data.Target.AbilityActorInfo->AvatarActor.IsValid())
 	{
@@ -130,6 +130,40 @@ void UAuraAttributeSet::PostGameplayEffectExecute(const struct FGameplayEffectMo
 		SetMana(FMath::Clamp(GetMana(), 0.f, GetMaxMana()));	
 	}
 
+	if (Data.EvaluatedData.Attribute == GetIncomingDamageAttribute())
+	{
+		const float LocalIncomingDamage = GetIncomingDamage();
+		SetIncomingDamage(0.f);
+		if (LocalIncomingDamage > 0.f)
+		{
+			const float NewHealth = GetHealth() - LocalIncomingDamage;
+			SetHealth(FMath::Clamp(NewHealth, 0.f, GetMaxHealth()));
+
+			const bool bFatal = NewHealth <= 0.f;
+			if (bFatal)
+			{
+				ICombatInterface* CombatInterface = Cast<ICombatInterface>(Props.TargetAvatarActor);
+				if (CombatInterface)
+				{
+					CombatInterface->Die();
+				}
+			}
+			else
+			{
+				FGameplayTagContainer TagContainer;
+				TagContainer.AddTag(FAuraGameplayTags::Get().Effects_HitReact);
+				Props.TargetASC->TryActivateAbilitiesByTag(TagContainer);
+			}
+
+			if (Props.SourceCharacter != Props.TargetCharacter)
+			{
+				if (AAuraPlayerController* PC = Cast<AAuraPlayerController>(UGameplayStatics::GetPlayerController(Props.SourceController, 0)))
+				{
+					PC->ShowDamageNumber(LocalIncomingDamage, Props.TargetCharacter);
+				}
+			}
+		}
+	}
 }
 
 void UAuraAttributeSet::OnRep_Health(const FGameplayAttributeData& OldHealth) const

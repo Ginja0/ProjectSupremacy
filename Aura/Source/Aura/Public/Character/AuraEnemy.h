@@ -5,8 +5,11 @@
 #include "CoreMinimal.h"
 #include "Character/AuraCharacterBase.h"
 #include "Interact/EnemyInterface.h"
+#include "UI/WidgetController/OverlayWidgetController.h"
+#include "AbilitySystem/Data/CharacterClassInfo.h"
 #include "AuraEnemy.generated.h"
 
+class UWidgetComponent;
 /**
  * 
  */
@@ -23,17 +26,39 @@ class AURA_API AAuraEnemy : public AAuraCharacterBase, public IEnemyInterface
 
 	/** Combat Interface */
 	virtual int32 GetPlayerLevel() override;
+	virtual void Die() override;
 	/** End Combat Interface */
 	
 	AAuraEnemy();
+
+	void HitReactChanged(const FGameplayTag CallbackTag, int32 NewCount);
+
+	UPROPERTY(BlueprintReadOnly, Category = "Combat")
+	bool bHitReacting = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Combat")
+	float BaseWalkSpeed = 250.f;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Combat")
+	float LifeSpan = 10.f;
 	
+	UPROPERTY(BlueprintAssignable)
+	FOnAttributeChangedSignature OnHealthChanged;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnAttributeChangedSignature OnMaxHealthChanged;
 protected:
 	virtual void BeginPlay() override;
 	virtual void InitAbilityActorInfo() override;
-
+	virtual void IntializeDefaultAttributes() const override;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Character Class Defaults")
 	int32 Level = 1;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Character Class Defaults")
+	ECharacterClass CharacterClass = ECharacterClass::Warrior;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	TObjectPtr<UWidgetComponent> HealthBar;
 
 
 };
