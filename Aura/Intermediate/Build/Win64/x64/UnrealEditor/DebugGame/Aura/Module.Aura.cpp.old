@@ -10,7 +10,6 @@
 #include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraPlayerState.gen.cpp"
 #include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraUserWidget.gen.cpp"
 #include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraWidgetController.gen.cpp"
-#include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/EffectCalc_Damage.gen.cpp"
 #include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/EnemyInterface.gen.cpp"
 #include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/MMC_MaxHealth.gen.cpp"
 #include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/MMC_MaxMana.gen.cpp"
