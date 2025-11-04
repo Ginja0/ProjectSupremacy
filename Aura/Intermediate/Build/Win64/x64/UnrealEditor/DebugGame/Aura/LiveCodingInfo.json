@@ -4,9 +4,7 @@
 		"Module.Aura.cpp.obj": [
 			"AttributeInfo.gen.cpp.obj",
 			"AttributeMenuWidgetController.gen.cpp.obj",
-			"Aura.init.gen.cpp.obj",
 			"AuraAbilitySystemComponent.gen.cpp.obj",
-			"AuraAbilitySystemLibrary.gen.cpp.obj",
 			"AuraAssetManager.gen.cpp.obj",
 			"AuraAttributeSet.gen.cpp.obj",
 			"AuraCharacter.gen.cpp.obj",
@@ -24,7 +22,6 @@
 			"AuraProjectileSpell.gen.cpp.obj",
 			"AuraUserWidget.gen.cpp.obj",
 			"AuraWidgetController.gen.cpp.obj",
-			"CharacterClassInfo.gen.cpp.obj",
 			"CombatInterface.gen.cpp.obj",
 			"DamageTextComponent.gen.cpp.obj",
 			"EffectCalc_Damage.gen.cpp.obj",
@@ -35,13 +32,10 @@
 			"TargetDataUnderMouse.gen.cpp.obj",
 			"Aura.cpp.obj",
 			"AuraGameplayAbility.cpp.obj",
-			"AuraProjectileSpell.cpp.obj",
 			"TargetDataUnderMouse.cpp.obj",
 			"AuraAbilitySystemComponent.cpp.obj",
-			"AuraAbilitySystemLibrary.cpp.obj",
 			"AuraAttributeSet.cpp.obj",
 			"AttributeInfo.cpp.obj",
-			"CharacterClassInfo.cpp.obj",
 			"MMC_MaxHealth.cpp.obj",
 			"MMC_MaxMana.cpp.obj",
 			"AuraEffectActor.cpp.obj",
@@ -64,7 +58,17 @@
 			"OverlayWidgetController.cpp.obj",
 			"AuraUserWidget.cpp.obj",
 			"DamageTextComponent.cpp.obj",
-			"EffectCalc_Damage.cpp.obj"
+			"Aura.init.gen.cpp.obj",
+			"AuraAbilitySystemGlobals.gen.cpp.obj",
+			"AuraAbilitySystemLibrary.gen.cpp.obj",
+			"AuraAbilityTypes.gen.cpp.obj",
+			"CharacterClassInfo.gen.cpp.obj",
+			"AuraProjectileSpell.cpp.obj",
+			"AuraAbilitySystemGlobals.cpp.obj",
+			"AuraAbilitySystemLibrary.cpp.obj",
+			"CharacterClassInfo.cpp.obj",
+			"EffectCalc_Damage.cpp.obj",
+			"AuraAbilityTypes.cpp.obj"
 		]
 	}
 }
