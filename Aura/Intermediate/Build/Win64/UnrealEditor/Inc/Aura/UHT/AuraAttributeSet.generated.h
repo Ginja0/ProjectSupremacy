@@ -28,6 +28,10 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FEffectProperties>();
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_AuraAttributeSet_h_67_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_AuraAttributeSet_h_67_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnRep_PhysicalResistance); \
+	DECLARE_FUNCTION(execOnRep_LightningResistance); \
+	DECLARE_FUNCTION(execOnRep_FireResistance); \
+	DECLARE_FUNCTION(execOnRep_ArcaneResistance); \
 	DECLARE_FUNCTION(execOnRep_ManaRegeneration); \
 	DECLARE_FUNCTION(execOnRep_HealthRegeneration); \
 	DECLARE_FUNCTION(execOnRep_CriticalHitResistance); \
@@ -73,7 +77,11 @@ public: \
 		MaxMana, \
 		Health, \
 		Mana, \
-		NETFIELD_REP_END=Mana	}; \
+		ArcaneResistance, \
+		FireResistance, \
+		LightningResistance, \
+		PhysicalResistance, \
+		NETFIELD_REP_END=PhysicalResistance	}; \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override; \
 private: \
 	REPLICATED_BASE_CLASS(UAuraAttributeSet) \

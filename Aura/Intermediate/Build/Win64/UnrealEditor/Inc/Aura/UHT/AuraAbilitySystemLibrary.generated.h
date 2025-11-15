@@ -15,6 +15,7 @@ class UCharacterClassInfo;
 class UObject;
 class UOverlayWidgetController;
 enum class ECharacterClass : uint8;
+struct FGameplayEffectContextHandle;
 #ifdef AURA_AuraAbilitySystemLibrary_generated_h
 #error "AuraAbilitySystemLibrary.generated.h already included, missing '#pragma once' in AuraAbilitySystemLibrary.h"
 #endif
@@ -25,6 +26,10 @@ enum class ECharacterClass : uint8;
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_AuraAbilitySystemLibrary_h_18_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_AuraAbilitySystemLibrary_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execSetIsCriticalHit); \
+	DECLARE_FUNCTION(execSetIsBlockedHit); \
+	DECLARE_FUNCTION(execIsCriticalHit); \
+	DECLARE_FUNCTION(execIsBlockedHit); \
 	DECLARE_FUNCTION(execGetCharacterClassInfo); \
 	DECLARE_FUNCTION(execGiveStartupAbilities); \
 	DECLARE_FUNCTION(execInitializeDefaultAttributes); \

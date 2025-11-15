@@ -26,22 +26,28 @@ void EmptyLinkFunctionForGeneratedCodeAuraPlayerController() {}
 	{
 		P_GET_PROPERTY(FFloatProperty,Z_Param_DamageAmount);
 		P_GET_OBJECT(ACharacter,Z_Param_TargetCharacter);
+		P_GET_UBOOL(Z_Param_bBlockedHit);
+		P_GET_UBOOL(Z_Param_bCriticalHit);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->ShowDamageNumber_Implementation(Z_Param_DamageAmount,Z_Param_TargetCharacter);
+		P_THIS->ShowDamageNumber_Implementation(Z_Param_DamageAmount,Z_Param_TargetCharacter,Z_Param_bBlockedHit,Z_Param_bCriticalHit);
 		P_NATIVE_END;
 	}
 	struct AuraPlayerController_eventShowDamageNumber_Parms
 	{
 		float DamageAmount;
 		ACharacter* TargetCharacter;
+		bool bBlockedHit;
+		bool bCriticalHit;
 	};
 	static FName NAME_AAuraPlayerController_ShowDamageNumber = FName(TEXT("ShowDamageNumber"));
-	void AAuraPlayerController::ShowDamageNumber(float DamageAmount, ACharacter* TargetCharacter)
+	void AAuraPlayerController::ShowDamageNumber(float DamageAmount, ACharacter* TargetCharacter, bool bBlockedHit, bool bCriticalHit)
 	{
 		AuraPlayerController_eventShowDamageNumber_Parms Parms;
 		Parms.DamageAmount=DamageAmount;
 		Parms.TargetCharacter=TargetCharacter;
+		Parms.bBlockedHit=bBlockedHit ? true : false;
+		Parms.bCriticalHit=bCriticalHit ? true : false;
 		ProcessEvent(FindFunctionChecked(NAME_AAuraPlayerController_ShowDamageNumber),&Parms);
 	}
 	void AAuraPlayerController::StaticRegisterNativesAAuraPlayerController()
@@ -56,6 +62,10 @@ void EmptyLinkFunctionForGeneratedCodeAuraPlayerController() {}
 	{
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_DamageAmount;
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_TargetCharacter;
+		static void NewProp_bBlockedHit_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_bBlockedHit;
+		static void NewProp_bCriticalHit_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_bCriticalHit;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -64,9 +74,21 @@ void EmptyLinkFunctionForGeneratedCodeAuraPlayerController() {}
 	};
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::NewProp_DamageAmount = { "DamageAmount", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraPlayerController_eventShowDamageNumber_Parms, DamageAmount), METADATA_PARAMS(0, nullptr) };
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::NewProp_TargetCharacter = { "TargetCharacter", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraPlayerController_eventShowDamageNumber_Parms, TargetCharacter), Z_Construct_UClass_ACharacter_NoRegister, METADATA_PARAMS(0, nullptr) };
+	void Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::NewProp_bBlockedHit_SetBit(void* Obj)
+	{
+		((AuraPlayerController_eventShowDamageNumber_Parms*)Obj)->bBlockedHit = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::NewProp_bBlockedHit = { "bBlockedHit", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AuraPlayerController_eventShowDamageNumber_Parms), &Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::NewProp_bBlockedHit_SetBit, METADATA_PARAMS(0, nullptr) };
+	void Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::NewProp_bCriticalHit_SetBit(void* Obj)
+	{
+		((AuraPlayerController_eventShowDamageNumber_Parms*)Obj)->bCriticalHit = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::NewProp_bCriticalHit = { "bCriticalHit", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AuraPlayerController_eventShowDamageNumber_Parms), &Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::NewProp_bCriticalHit_SetBit, METADATA_PARAMS(0, nullptr) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::NewProp_DamageAmount,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::NewProp_TargetCharacter,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::NewProp_bBlockedHit,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::NewProp_bCriticalHit,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber_Statics::Function_MetaDataParams[] = {
@@ -139,7 +161,7 @@ void EmptyLinkFunctionForGeneratedCodeAuraPlayerController() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraPlayerController_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_AAuraPlayerController_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber, "ShowDamageNumber" }, // 1219160221
+		{ &Z_Construct_UFunction_AAuraPlayerController_ShowDamageNumber, "ShowDamageNumber" }, // 1026419894
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraPlayerController_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -257,9 +279,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraPlayerController() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_PlayerController_AuraPlayerController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAuraPlayerController, AAuraPlayerController::StaticClass, TEXT("AAuraPlayerController"), &Z_Registration_Info_UClass_AAuraPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAuraPlayerController), 1148821387U) },
+		{ Z_Construct_UClass_AAuraPlayerController, AAuraPlayerController::StaticClass, TEXT("AAuraPlayerController"), &Z_Registration_Info_UClass_AAuraPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAuraPlayerController), 2335305376U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_PlayerController_AuraPlayerController_h_2843388123(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_PlayerController_AuraPlayerController_h_2798835958(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_PlayerController_AuraPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_PlayerController_AuraPlayerController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

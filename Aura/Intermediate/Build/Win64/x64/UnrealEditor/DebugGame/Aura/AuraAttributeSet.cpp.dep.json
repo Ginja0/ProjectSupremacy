@@ -71,6 +71,10 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\public\\net\\unrealnetwork.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\net\\core\\public\\net\\core\\propertyconditions\\propertyconditions.h",
             "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\auragameplaytags.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\abilitysystem\\auraabilitysystemlibrary.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\abilitysystem\\data\\characterclassinfo.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\characterclassinfo.generated.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auraabilitysystemlibrary.generated.h",
             "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\interact\\combatinterface.h",
             "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\combatinterface.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystatics.h",
@@ -83,7 +87,15 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystaticstypes.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h",
             "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\playercontroller\\auraplayercontroller.h",
-            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auraplayercontroller.generated.h"
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auraplayercontroller.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\geometrycore\\public\\spatial\\blockeddensegrid3.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\geometrycore\\public\\spatial\\blockedlayout3.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\geometrycore\\public\\intboxtypes.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\geometrycore\\public\\intvectortypes.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\geometrycore\\public\\boxtypes.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\geometrycore\\public\\transformtypes.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\geometrycore\\public\\quaternion.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\geometrycore\\public\\matrixtypes.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
