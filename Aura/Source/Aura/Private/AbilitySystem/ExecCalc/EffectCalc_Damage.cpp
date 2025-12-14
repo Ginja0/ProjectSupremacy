@@ -120,7 +120,7 @@ void UEffectCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecu
 		ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(CaptureDef, EvaluateParams, Resistance);
 		Resistance = FMath::Clamp(Resistance, 0.f, 100.f);
 
-		DamageTypeValue *=  (100.f * Resistance) / 100.f;
+		DamageTypeValue *=  (100.f - Resistance) / 100.f;
 		
 		Damage += DamageTypeValue;
 	}
