@@ -83,9 +83,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraMeleeAttack() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraMeleeAttack_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UAuraMeleeAttack, UAuraMeleeAttack::StaticClass, TEXT("UAuraMeleeAttack"), &Z_Registration_Info_UClass_UAuraMeleeAttack, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraMeleeAttack), 3325073850U) },
+		{ Z_Construct_UClass_UAuraMeleeAttack, UAuraMeleeAttack::StaticClass, TEXT("UAuraMeleeAttack"), &Z_Registration_Info_UClass_UAuraMeleeAttack, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraMeleeAttack), 2922056572U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraMeleeAttack_h_3942257739(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraMeleeAttack_h_1995915100(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraMeleeAttack_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraMeleeAttack_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
