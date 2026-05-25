@@ -23,9 +23,11 @@ void EmptyLinkFunctionForGeneratedCodeAuraProjectileSpell() {}
 	{
 		P_GET_STRUCT_REF(FVector,Z_Param_Out_ProjectileTargetLocation);
 		P_GET_STRUCT_REF(FGameplayTag,Z_Param_Out_SocketTag);
+		P_GET_UBOOL(Z_Param_bOverridePitch);
+		P_GET_PROPERTY(FFloatProperty,Z_Param_PitchOverride);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->SpawnProjectile(Z_Param_Out_ProjectileTargetLocation,Z_Param_Out_SocketTag);
+		P_THIS->SpawnProjectile(Z_Param_Out_ProjectileTargetLocation,Z_Param_Out_SocketTag,Z_Param_bOverridePitch,Z_Param_PitchOverride);
 		P_NATIVE_END;
 	}
 	void UAuraProjectileSpell::StaticRegisterNativesUAuraProjectileSpell()
@@ -42,6 +44,8 @@ void EmptyLinkFunctionForGeneratedCodeAuraProjectileSpell() {}
 		{
 			FVector ProjectileTargetLocation;
 			FGameplayTag SocketTag;
+			bool bOverridePitch;
+			float PitchOverride;
 		};
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileTargetLocation_MetaData[];
@@ -51,6 +55,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraProjectileSpell() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_SocketTag_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_SocketTag;
+		static void NewProp_bOverridePitch_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_bOverridePitch;
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_PitchOverride;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -69,13 +76,23 @@ void EmptyLinkFunctionForGeneratedCodeAuraProjectileSpell() {}
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile_Statics::NewProp_SocketTag = { "SocketTag", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraProjectileSpell_eventSpawnProjectile_Parms, SocketTag), Z_Construct_UScriptStruct_FGameplayTag, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile_Statics::NewProp_SocketTag_MetaData), Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile_Statics::NewProp_SocketTag_MetaData) }; // 2083603574
+	void Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile_Statics::NewProp_bOverridePitch_SetBit(void* Obj)
+	{
+		((AuraProjectileSpell_eventSpawnProjectile_Parms*)Obj)->bOverridePitch = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile_Statics::NewProp_bOverridePitch = { "bOverridePitch", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AuraProjectileSpell_eventSpawnProjectile_Parms), &Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile_Statics::NewProp_bOverridePitch_SetBit, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile_Statics::NewProp_PitchOverride = { "PitchOverride", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraProjectileSpell_eventSpawnProjectile_Parms, PitchOverride), METADATA_PARAMS(0, nullptr) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile_Statics::NewProp_ProjectileTargetLocation,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile_Statics::NewProp_SocketTag,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile_Statics::NewProp_bOverridePitch,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile_Statics::NewProp_PitchOverride,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Projectile" },
+		{ "CPP_Default_bOverridePitch", "false" },
+		{ "CPP_Default_PitchOverride", "0.000000" },
 		{ "ModuleRelativePath", "Public/AbilitySystem/Abilities/AuraProjectileSpell.h" },
 	};
 #endif
@@ -117,7 +134,7 @@ void EmptyLinkFunctionForGeneratedCodeAuraProjectileSpell() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraProjectileSpell_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UAuraProjectileSpell_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile, "SpawnProjectile" }, // 2435626353
+		{ &Z_Construct_UFunction_UAuraProjectileSpell_SpawnProjectile, "SpawnProjectile" }, // 4133604065
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraProjectileSpell_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -178,9 +195,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraProjectileSpell() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraProjectileSpell_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UAuraProjectileSpell, UAuraProjectileSpell::StaticClass, TEXT("UAuraProjectileSpell"), &Z_Registration_Info_UClass_UAuraProjectileSpell, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraProjectileSpell), 361771144U) },
+		{ Z_Construct_UClass_UAuraProjectileSpell, UAuraProjectileSpell::StaticClass, TEXT("UAuraProjectileSpell"), &Z_Registration_Info_UClass_UAuraProjectileSpell, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraProjectileSpell), 1771409348U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraProjectileSpell_h_249797223(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraProjectileSpell_h_1550561664(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraProjectileSpell_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraProjectileSpell_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

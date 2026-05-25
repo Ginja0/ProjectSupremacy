@@ -30,6 +30,8 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FTaggedMontage>();
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_34_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_34_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_34_RPC_WRAPPERS_NO_PURE_DECLS \
+	virtual void IncrementMinionCount_Implementation(int32 Amount) {}; \
+	virtual int32 GetMinionCount_Implementation() { return 0; }; \
 	virtual FTaggedMontage GetTaggedMontageByTag_Implementation(FGameplayTag const& MontageTag) { return FTaggedMontage(); }; \
 	virtual UNiagaraSystem* GetBloodEffect_Implementation() { return NULL; }; \
 	virtual TArray<FTaggedMontage> GetAttackMontage_Implementation() { return TArray<FTaggedMontage>(); }; \
@@ -38,6 +40,8 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FTaggedMontage>();
 	virtual UAnimMontage* GetHitReactMontage_Implementation() { return NULL; }; \
 	virtual FVector GetCombatSocketLocation_Implementation(FGameplayTag const& MontageTag) { return FVector(ForceInit); }; \
  \
+	DECLARE_FUNCTION(execIncrementMinionCount); \
+	DECLARE_FUNCTION(execGetMinionCount); \
 	DECLARE_FUNCTION(execGetTaggedMontageByTag); \
 	DECLARE_FUNCTION(execGetBloodEffect); \
 	DECLARE_FUNCTION(execGetAttackMontage); \
@@ -91,7 +95,9 @@ public: \
 	static UNiagaraSystem* Execute_GetBloodEffect(UObject* O); \
 	static FVector Execute_GetCombatSocketLocation(UObject* O, FGameplayTag const& MontageTag); \
 	static UAnimMontage* Execute_GetHitReactMontage(UObject* O); \
+	static int32 Execute_GetMinionCount(UObject* O); \
 	static FTaggedMontage Execute_GetTaggedMontageByTag(UObject* O, FGameplayTag const& MontageTag); \
+	static void Execute_IncrementMinionCount(UObject* O, int32 Amount); \
 	static bool Execute_IsDead(const UObject* O); \
 	static void Execute_UpdateFacingTarget(UObject* O, FVector const& Target); \
 	virtual UObject* _getUObject() const { return nullptr; }

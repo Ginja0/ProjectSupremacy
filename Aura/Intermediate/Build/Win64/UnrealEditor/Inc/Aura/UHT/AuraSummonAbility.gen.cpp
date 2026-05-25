@@ -17,6 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeAuraSummonAbility() {}
 	ENGINE_API UClass* Z_Construct_UClass_APawn_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
+	DEFINE_FUNCTION(UAuraSummonAbility::execGetRandomMinionClass)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(TSubclassOf<APawn> *)Z_Param__Result=P_THIS->GetRandomMinionClass();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UAuraSummonAbility::execGetSpawnLocations)
 	{
 		P_FINISH;
@@ -28,9 +35,45 @@ void EmptyLinkFunctionForGeneratedCodeAuraSummonAbility() {}
 	{
 		UClass* Class = UAuraSummonAbility::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "GetRandomMinionClass", &UAuraSummonAbility::execGetRandomMinionClass },
 			{ "GetSpawnLocations", &UAuraSummonAbility::execGetSpawnLocations },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics
+	{
+		struct AuraSummonAbility_eventGetRandomMinionClass_Parms
+		{
+			TSubclassOf<APawn>  ReturnValue;
+		};
+		static const UECodeGen_Private::FClassPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0014000000000580, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraSummonAbility_eventGetRandomMinionClass_Parms, ReturnValue), Z_Construct_UClass_UClass, Z_Construct_UClass_APawn_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Summoning" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/Abilities/AuraSummonAbility.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UAuraSummonAbility, nullptr, "GetRandomMinionClass", nullptr, nullptr, Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics::PropPointers), sizeof(Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics::AuraSummonAbility_eventGetRandomMinionClass_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics::Function_MetaDataParams), Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics::AuraSummonAbility_eventGetRandomMinionClass_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_UAuraSummonAbility_GetSpawnLocations_Statics
 	{
@@ -112,6 +155,7 @@ void EmptyLinkFunctionForGeneratedCodeAuraSummonAbility() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraSummonAbility_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UAuraSummonAbility_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UAuraSummonAbility_GetRandomMinionClass, "GetRandomMinionClass" }, // 496180564
 		{ &Z_Construct_UFunction_UAuraSummonAbility_GetSpawnLocations, "GetSpawnLocations" }, // 1931835201
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraSummonAbility_Statics::FuncInfo) < 2048);
@@ -207,9 +251,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraSummonAbility() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraSummonAbility_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UAuraSummonAbility, UAuraSummonAbility::StaticClass, TEXT("UAuraSummonAbility"), &Z_Registration_Info_UClass_UAuraSummonAbility, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraSummonAbility), 4207986029U) },
+		{ Z_Construct_UClass_UAuraSummonAbility, UAuraSummonAbility::StaticClass, TEXT("UAuraSummonAbility"), &Z_Registration_Info_UClass_UAuraSummonAbility, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraSummonAbility), 3045675306U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraSummonAbility_h_2070191433(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraSummonAbility_h_2668217244(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraSummonAbility_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraSummonAbility_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

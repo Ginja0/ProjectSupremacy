@@ -59,6 +59,7 @@ public:
 	FGameplayTag Damage_Physical;
 
 	FGameplayTag Abilities_Attack;
+	FGameplayTag Abilities_Summon;
 
 	//Montage Tags
 	FGameplayTag Montage_Attack_1;

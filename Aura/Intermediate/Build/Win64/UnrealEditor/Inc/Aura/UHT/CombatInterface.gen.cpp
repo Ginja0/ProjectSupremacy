@@ -126,6 +126,21 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		}
 		return Z_Registration_Info_UScriptStruct_TaggedMontage.InnerSingleton;
 	}
+	DEFINE_FUNCTION(ICombatInterface::execIncrementMinionCount)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_Amount);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->IncrementMinionCount_Implementation(Z_Param_Amount);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ICombatInterface::execGetMinionCount)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(int32*)Z_Param__Result=P_THIS->GetMinionCount_Implementation();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ICombatInterface::execGetTaggedMontageByTag)
 	{
 		P_GET_STRUCT_REF(FGameplayTag,Z_Param_Out_MontageTag);
@@ -222,10 +237,24 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		{
 		}
 	};
+	struct CombatInterface_eventGetMinionCount_Parms
+	{
+		int32 ReturnValue;
+
+		/** Constructor, initializes return property only **/
+		CombatInterface_eventGetMinionCount_Parms()
+			: ReturnValue(0)
+		{
+		}
+	};
 	struct CombatInterface_eventGetTaggedMontageByTag_Parms
 	{
 		FGameplayTag MontageTag;
 		FTaggedMontage ReturnValue;
+	};
+	struct CombatInterface_eventIncrementMinionCount_Parms
+	{
+		int32 Amount;
 	};
 	struct CombatInterface_eventIsDead_Parms
 	{
@@ -271,11 +300,21 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		CombatInterface_eventGetHitReactMontage_Parms Parms;
 		return Parms.ReturnValue;
 	}
+	int32 ICombatInterface::GetMinionCount()
+	{
+		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_GetMinionCount instead.");
+		CombatInterface_eventGetMinionCount_Parms Parms;
+		return Parms.ReturnValue;
+	}
 	FTaggedMontage ICombatInterface::GetTaggedMontageByTag(FGameplayTag const& MontageTag)
 	{
 		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_GetTaggedMontageByTag instead.");
 		CombatInterface_eventGetTaggedMontageByTag_Parms Parms;
 		return Parms.ReturnValue;
+	}
+	void ICombatInterface::IncrementMinionCount(int32 Amount)
+	{
+		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_IncrementMinionCount instead.");
 	}
 	bool ICombatInterface::IsDead() const
 	{
@@ -296,7 +335,9 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 			{ "GetBloodEffect", &ICombatInterface::execGetBloodEffect },
 			{ "GetCombatSocketLocation", &ICombatInterface::execGetCombatSocketLocation },
 			{ "GetHitReactMontage", &ICombatInterface::execGetHitReactMontage },
+			{ "GetMinionCount", &ICombatInterface::execGetMinionCount },
 			{ "GetTaggedMontageByTag", &ICombatInterface::execGetTaggedMontageByTag },
+			{ "IncrementMinionCount", &ICombatInterface::execIncrementMinionCount },
 			{ "IsDead", &ICombatInterface::execIsDead },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -465,6 +506,36 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics
+	{
+		static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CombatInterface_eventGetMinionCount_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Interact/CombatInterface.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCombatInterface, nullptr, "GetMinionCount", nullptr, nullptr, Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::PropPointers), sizeof(CombatInterface_eventGetMinionCount_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::PropPointers) < 2048);
+	static_assert(sizeof(CombatInterface_eventGetMinionCount_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UCombatInterface_GetMinionCount()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics
 	{
 #if WITH_METADATA
@@ -503,6 +574,36 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics
+	{
+		static const UECodeGen_Private::FIntPropertyParams NewProp_Amount;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::NewProp_Amount = { "Amount", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CombatInterface_eventIncrementMinionCount_Parms, Amount), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::NewProp_Amount,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Interact/CombatInterface.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCombatInterface, nullptr, "IncrementMinionCount", nullptr, nullptr, Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::PropPointers), sizeof(CombatInterface_eventIncrementMinionCount_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::PropPointers) < 2048);
+	static_assert(sizeof(CombatInterface_eventIncrementMinionCount_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UCombatInterface_IncrementMinionCount()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -605,7 +706,9 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		{ &Z_Construct_UFunction_UCombatInterface_GetBloodEffect, "GetBloodEffect" }, // 848030077
 		{ &Z_Construct_UFunction_UCombatInterface_GetCombatSocketLocation, "GetCombatSocketLocation" }, // 4203577834
 		{ &Z_Construct_UFunction_UCombatInterface_GetHitReactMontage, "GetHitReactMontage" }, // 3347542396
+		{ &Z_Construct_UFunction_UCombatInterface_GetMinionCount, "GetMinionCount" }, // 3997543059
 		{ &Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag, "GetTaggedMontageByTag" }, // 2466190134
+		{ &Z_Construct_UFunction_UCombatInterface_IncrementMinionCount, "IncrementMinionCount" }, // 390298618
 		{ &Z_Construct_UFunction_UCombatInterface_IsDead, "IsDead" }, // 406740336
 		{ &Z_Construct_UFunction_UCombatInterface_UpdateFacingTarget, "UpdateFacingTarget" }, // 216752011
 	};
@@ -735,6 +838,23 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		}
 		return Parms.ReturnValue;
 	}
+	static FName NAME_UCombatInterface_GetMinionCount = FName(TEXT("GetMinionCount"));
+	int32 ICombatInterface::Execute_GetMinionCount(UObject* O)
+	{
+		check(O != NULL);
+		check(O->GetClass()->ImplementsInterface(UCombatInterface::StaticClass()));
+		CombatInterface_eventGetMinionCount_Parms Parms;
+		UFunction* const Func = O->FindFunction(NAME_UCombatInterface_GetMinionCount);
+		if (Func)
+		{
+			O->ProcessEvent(Func, &Parms);
+		}
+		else if (auto I = (ICombatInterface*)(O->GetNativeInterfaceAddress(UCombatInterface::StaticClass())))
+		{
+			Parms.ReturnValue = I->GetMinionCount_Implementation();
+		}
+		return Parms.ReturnValue;
+	}
 	static FName NAME_UCombatInterface_GetTaggedMontageByTag = FName(TEXT("GetTaggedMontageByTag"));
 	FTaggedMontage ICombatInterface::Execute_GetTaggedMontageByTag(UObject* O, FGameplayTag const& MontageTag)
 	{
@@ -752,6 +872,23 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 			Parms.ReturnValue = I->GetTaggedMontageByTag_Implementation(MontageTag);
 		}
 		return Parms.ReturnValue;
+	}
+	static FName NAME_UCombatInterface_IncrementMinionCount = FName(TEXT("IncrementMinionCount"));
+	void ICombatInterface::Execute_IncrementMinionCount(UObject* O, int32 Amount)
+	{
+		check(O != NULL);
+		check(O->GetClass()->ImplementsInterface(UCombatInterface::StaticClass()));
+		CombatInterface_eventIncrementMinionCount_Parms Parms;
+		UFunction* const Func = O->FindFunction(NAME_UCombatInterface_IncrementMinionCount);
+		if (Func)
+		{
+			Parms.Amount=Amount;
+			O->ProcessEvent(Func, &Parms);
+		}
+		else if (auto I = (ICombatInterface*)(O->GetNativeInterfaceAddress(UCombatInterface::StaticClass())))
+		{
+			I->IncrementMinionCount_Implementation(Amount);
+		}
 	}
 	static FName NAME_UCombatInterface_IsDead = FName(TEXT("IsDead"));
 	bool ICombatInterface::Execute_IsDead(const UObject* O)
@@ -792,9 +929,9 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		{ FTaggedMontage::StaticStruct, Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewStructOps, TEXT("TaggedMontage"), &Z_Registration_Info_UScriptStruct_TaggedMontage, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FTaggedMontage), 2140696426U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UCombatInterface, UCombatInterface::StaticClass, TEXT("UCombatInterface"), &Z_Registration_Info_UClass_UCombatInterface, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCombatInterface), 2055348374U) },
+		{ Z_Construct_UClass_UCombatInterface, UCombatInterface::StaticClass, TEXT("UCombatInterface"), &Z_Registration_Info_UClass_UCombatInterface, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCombatInterface), 1973523635U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_2119710619(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_3335981082(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_Statics::ScriptStructInfo),
 		nullptr, 0);

@@ -8,6 +8,7 @@
 #include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraAIController.gen.cpp"
 #include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraAssetManager.gen.cpp"
 #include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraAttributeSet.gen.cpp"
+#include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraDamageGameplayAbility.gen.cpp"
 #include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraEffectActor.gen.cpp"
 #include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraGameModeBase.gen.cpp"
 #include "C:/Users/USER/Documents/GitHub/ProjectSupremacy/Aura/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraGameplayAbility.gen.cpp"
