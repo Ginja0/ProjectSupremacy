@@ -11,6 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeAuraWidgetController() {}
 // Cross Module References
 	AURA_API UClass* Z_Construct_UClass_UAuraWidgetController();
 	AURA_API UClass* Z_Construct_UClass_UAuraWidgetController_NoRegister();
+	AURA_API UFunction* Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature();
 	AURA_API UScriptStruct* Z_Construct_UScriptStruct_FWidgetControllerParams();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
 	ENGINE_API UClass* Z_Construct_UClass_APlayerController_NoRegister();
@@ -19,6 +20,50 @@ void EmptyLinkFunctionForGeneratedCodeAuraWidgetController() {}
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UAttributeSet_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
+	struct Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics
+	{
+		struct _Script_Aura_eventOnPlayerStatChangedSignature_Parms
+		{
+			int32 NewValue;
+		};
+		static const UECodeGen_Private::FIntPropertyParams NewProp_NewValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::NewProp_NewValue = { "NewValue", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_Aura_eventOnPlayerStatChangedSignature_Parms, NewValue), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::NewProp_NewValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/UI/WidgetController/AuraWidgetController.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_Aura, nullptr, "OnPlayerStatChangedSignature__DelegateSignature", nullptr, nullptr, Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::_Script_Aura_eventOnPlayerStatChangedSignature_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::_Script_Aura_eventOnPlayerStatChangedSignature_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+void FOnPlayerStatChangedSignature_DelegateWrapper(const FMulticastScriptDelegate& OnPlayerStatChangedSignature, int32 NewValue)
+{
+	struct _Script_Aura_eventOnPlayerStatChangedSignature_Parms
+	{
+		int32 NewValue;
+	};
+	_Script_Aura_eventOnPlayerStatChangedSignature_Parms Parms;
+	Parms.NewValue=NewValue;
+	OnPlayerStatChangedSignature.ProcessMulticastDelegate<UObject>(&Parms);
+}
 	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_WidgetControllerParams;
 class UScriptStruct* FWidgetControllerParams::StaticStruct()
 {

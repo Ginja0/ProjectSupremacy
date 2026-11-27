@@ -42,6 +42,9 @@ public:
 	FGameplayTag Attributes_Resistance_Fire;
 	FGameplayTag Attributes_Resistance_Lightning;
 	FGameplayTag Attributes_Resistance_Physical;
+	
+	//Meta
+	FGameplayTag Attributes_Meta_IncomingXP;
 
 	//Inputs
 	FGameplayTag InputTag_LMB;
@@ -60,6 +63,11 @@ public:
 
 	FGameplayTag Abilities_Attack;
 	FGameplayTag Abilities_Summon;
+	
+	FGameplayTag Abilities_Fire_FireBolt;
+	
+	FGameplayTag Cooldown_Fire_FireBolt;
+	
 
 	//Montage Tags
 	FGameplayTag Montage_Attack_1;

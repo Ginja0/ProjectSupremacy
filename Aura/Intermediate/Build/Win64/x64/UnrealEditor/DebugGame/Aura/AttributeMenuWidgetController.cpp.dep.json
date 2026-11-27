@@ -64,10 +64,18 @@
             "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\aurawidgetcontroller.generated.h",
             "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\attributemenuwidgetcontroller.generated.h",
             "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\auragameplaytags.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\abilitysystem\\auraabilitysystemcomponent.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auraabilitysystemcomponent.generated.h",
             "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\abilitysystem\\auraattributeset.h",
             "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auraattributeset.generated.h",
             "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\abilitysystem\\data\\attributeinfo.h",
-            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\attributeinfo.generated.h"
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\attributeinfo.generated.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\playercontroller\\auraplayerstate.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\abilitysysteminterface.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\abilitysysteminterface.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\playerstate.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\playerstate.generated.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auraplayerstate.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

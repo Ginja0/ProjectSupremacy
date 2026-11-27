@@ -7,12 +7,14 @@
 #include "GameFramework/PlayerState.h"
 #include "AuraPlayerState.generated.h"
 
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnPlayerStateChanged, int32 /*StatValue*/)
 /**
  * 
  */
 
 class UAbilitySystemComponent;
 class UAttributeSet;
+class ULevelUpInfo;
 UCLASS()
 class AURA_API AAuraPlayerState : public APlayerState, public IAbilitySystemInterface
 {
@@ -23,8 +25,31 @@ public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 	UAttributeSet* GetAttributeSet() const { return AttributeSet; };
+	
+	UPROPERTY(EditDefaultsOnly)
+	TObjectPtr<ULevelUpInfo> LevelUpInfo;
 
+	FOnPlayerStateChanged OnXpChangedDelegate;
+	FOnPlayerStateChanged OnLevelChangedDelegate;
+	FOnPlayerStateChanged OnAttributePointsChangedDelegate;
+	FOnPlayerStateChanged OnSpellPointsChangedDelegate;
+	
 	int32 GetPlayerLevel() const;
+	int32 GetXP() const;
+	int32 GetAttributePoints() const;
+	int32 GetSpellPoints() const;
+	
+	void AddToXP(int32 InXP);
+	void AddToLevel(int32 InLevel);
+	void AddToAttributePoints(int32 InAttributePoints);
+	void AddToSpellPoints(int32 InSpellPoints);
+	
+	
+	void SetXP(int32 InXP);
+	void SetLevel(int32 InLevel);
+	
+	
+	
 
 protected:
 	UPROPERTY(VisibleAnywhere)
@@ -33,13 +58,32 @@ protected:
 	UPROPERTY()
 	TObjectPtr<UAttributeSet> AttributeSet;
 
-	UFUNCTION()
-	void OnRep_Level(int32 OldLevel);
+
 
 private:
 	UPROPERTY(VisibleAnywhere, ReplicatedUsing=OnRep_Level)
 	int32 Level = 1;
 	
+	UPROPERTY(VisibleAnywhere, ReplicatedUsing=OnRep_XP)
+	int32 XP = 1;
+	
+	UPROPERTY(VisibleAnywhere, ReplicatedUsing=OnRep_AttributePoints)
+	int32 AttributePoints = 0;
+	
+	UPROPERTY(VisibleAnywhere, ReplicatedUsing=OnRep_SpellPoints)
+	int32 SpellPoints = 0;
+	
+	UFUNCTION()
+	void OnRep_Level(int32 OldLevel);
+	
+	UFUNCTION()
+	void OnRep_XP(int32 OldXP);
+	
+	UFUNCTION()
+	void OnRep_AttributePoints(int32 OldAttributePoints);
+	
+	UFUNCTION()
+	void OnRep_SpellPoints(int32 OldSpellPoints);
 	
 };
 

@@ -15,6 +15,10 @@ struct FWidgetControllerParams;
 #endif
 #define AURA_AuraWidgetController_generated_h
 
+#define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_10_DELEGATE \
+AURA_API void FOnPlayerStatChangedSignature_DelegateWrapper(const FMulticastScriptDelegate& OnPlayerStatChangedSignature, int32 NewValue);
+
+
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_17_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FWidgetControllerParams_Statics; \
 	AURA_API static class UScriptStruct* StaticStruct();

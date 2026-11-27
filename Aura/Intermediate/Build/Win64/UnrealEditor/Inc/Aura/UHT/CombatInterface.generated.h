@@ -12,6 +12,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
 class UAnimMontage;
 class UNiagaraSystem;
+enum class ECharacterClass : uint8;
 struct FGameplayTag;
 struct FTaggedMontage;
 #ifdef AURA_CombatInterface_generated_h
@@ -30,6 +31,7 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FTaggedMontage>();
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_34_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_34_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_34_RPC_WRAPPERS_NO_PURE_DECLS \
+	virtual ECharacterClass GetCharacterClass_Implementation() { return (ECharacterClass)0; }; \
 	virtual void IncrementMinionCount_Implementation(int32 Amount) {}; \
 	virtual int32 GetMinionCount_Implementation() { return 0; }; \
 	virtual FTaggedMontage GetTaggedMontageByTag_Implementation(FGameplayTag const& MontageTag) { return FTaggedMontage(); }; \
@@ -39,7 +41,9 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FTaggedMontage>();
 	virtual bool IsDead_Implementation() const { return false; }; \
 	virtual UAnimMontage* GetHitReactMontage_Implementation() { return NULL; }; \
 	virtual FVector GetCombatSocketLocation_Implementation(FGameplayTag const& MontageTag) { return FVector(ForceInit); }; \
+	virtual int32 GetPlayerLevel_Implementation() { return 0; }; \
  \
+	DECLARE_FUNCTION(execGetCharacterClass); \
 	DECLARE_FUNCTION(execIncrementMinionCount); \
 	DECLARE_FUNCTION(execGetMinionCount); \
 	DECLARE_FUNCTION(execGetTaggedMontageByTag); \
@@ -48,7 +52,8 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FTaggedMontage>();
 	DECLARE_FUNCTION(execGetAvatar); \
 	DECLARE_FUNCTION(execIsDead); \
 	DECLARE_FUNCTION(execGetHitReactMontage); \
-	DECLARE_FUNCTION(execGetCombatSocketLocation);
+	DECLARE_FUNCTION(execGetCombatSocketLocation); \
+	DECLARE_FUNCTION(execGetPlayerLevel);
 
 
 #define FID_Users_USER_Documents_GitHub_ProjectSupremacy_Aura_Source_Aura_Public_Interact_CombatInterface_h_34_ACCESSORS
@@ -93,9 +98,11 @@ public: \
 	static TArray<FTaggedMontage> Execute_GetAttackMontage(UObject* O); \
 	static AActor* Execute_GetAvatar(UObject* O); \
 	static UNiagaraSystem* Execute_GetBloodEffect(UObject* O); \
+	static ECharacterClass Execute_GetCharacterClass(UObject* O); \
 	static FVector Execute_GetCombatSocketLocation(UObject* O, FGameplayTag const& MontageTag); \
 	static UAnimMontage* Execute_GetHitReactMontage(UObject* O); \
 	static int32 Execute_GetMinionCount(UObject* O); \
+	static int32 Execute_GetPlayerLevel(UObject* O); \
 	static FTaggedMontage Execute_GetTaggedMontageByTag(UObject* O, FGameplayTag const& MontageTag); \
 	static void Execute_IncrementMinionCount(UObject* O, int32 Amount); \
 	static bool Execute_IsDead(const UObject* O); \

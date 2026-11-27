@@ -227,7 +227,9 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\uht\\widgetanimation.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\uht\\userwidget.generated.h",
             "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\aurauserwidget.generated.h",
-            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\overlaywidgetcontroller.generated.h"
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\overlaywidgetcontroller.generated.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\source\\aura\\public\\abilitysystem\\data\\abilityinfo.h",
+            "c:\\users\\user\\documents\\github\\projectsupremacy\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\abilityinfo.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
